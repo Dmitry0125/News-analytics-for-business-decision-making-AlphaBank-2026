@@ -5,18 +5,17 @@ export default function ChatButton({ onClick }) {
     <Button 
       type="primary" 
       size="large"
-      onClick={onClick} // Мы добавили сюда клик, чтобы потом открывать чат
+      onClick={onClick}
+      className="chat-button"
       style={{ 
         position: 'fixed', 
         bottom: '30px', 
         right: '30px', 
-        zIndex: 1000,
+        zIndex: 9999,
         height: '50px',
         padding: '0 25px',
         borderRadius: '25px',
-        background: '#ef3124',
-        borderColor: '#ef3124',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+        fontWeight: 'bold'
       }}
     >
       Спросить ИИ

@@ -1,0 +1,23 @@
+.chat-button {
+  background-color: #ef3124 !important;
+  border-color: #ef3124 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.chat-button:hover {
+  transform: scale(1.05) !important;
+  background-color: #d92b1f !important;
+  box-shadow: 0 8px 24px rgba(239, 49, 36, 0.5) !important;
+}
+
+.more-detailed{
+    padding: 0;
+    color: #08628C;
+    fontWeight: 500;
+    transition: all 0.3s ease !important;
+}
+.more-detailed:hover{
+    color: #3d93bb;
+    padding: 5px;
+}

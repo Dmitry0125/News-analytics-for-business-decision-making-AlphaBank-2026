@@ -1,4 +1,4 @@
-import { Typography, Card } from 'antd';
+import { Card } from 'antd';
 import { BulbOutlined } from '@ant-design/icons';
 
 export default function CompanyHeader({ ai_interpretation }) {

@@ -11,7 +11,6 @@ export default function Header() {
       zIndex: 1000,       
       boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
     }}>
-      {/* Логотип "А" в белом кружке */}
       <div style={{
         backgroundColor: 'white',
         color: '#EF3124',
