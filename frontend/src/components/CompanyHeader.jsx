@@ -10,7 +10,9 @@ export default function CompanyHeader({ target_company }) {
         <Title level={4} style={{ margin: 0 }}>
           {target_company.org_type} (ОКВЭД: {target_company.okved_code})
         </Title>
-        <Text type="secondary">{target_company.city} | {target_company.okved_name}</Text>
+        <Text type="secondary">
+          {target_company.city} | {target_company.okved_name}
+        </Text>
       </div>
       <Button icon={<ShareAltOutlined />}>Поделиться</Button>
     </div>
