@@ -74,3 +74,4 @@ Thumbs.db
 **/*.pt
 **/*.ckpt
 **/models/downloads/
+backend/postgres_data/
