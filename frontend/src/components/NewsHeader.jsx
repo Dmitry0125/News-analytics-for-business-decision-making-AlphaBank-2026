@@ -3,14 +3,25 @@ import { LinkOutlined } from '@ant-design/icons';
 
 const { Title, Text } = Typography;
 
-export default function NewsHeader({ news_source, risk_level }) {
+export default function NewsHeader({ news_source, risk_level}) {
   const sourceUrl = news_source?.source_url || '#';
   const sourceName = news_source?.source_name || 'Первоисточник';
   
   // Определяем цвет и текст плашки
-  const isRisk = risk_level === 'High Risk' || risk_level === 'ВЫСОКИЙ РИСК'; 
-  const tagColor = isRisk ? 'green' : 'red';
-  const tagText = isRisk ? 'ВОЗМОЖНОСТЬ' : 'ВЫСОКИЙ РИСК';
+  const risk = risk_level;
+  let tagColor = 'gray'
+  let tagText = 'ЗАГРУЗКА'
+  console.log(risk)
+  if (risk === 'High Risk' || risk === 'ВЫСОКИЙ РИСК') {
+    tagColor = 'red';
+    tagText = 'ВЫСОКИЙ РИСК';
+  } else if (risk === 'Opportunity' || risk === 'ВОЗМОЖНОСТЬ') {
+    tagColor = 'green';
+    tagText = 'ВОЗМОЖНОСТЬ';
+  } else if (risk === 'Medium Risk' || risk === 'СРЕДНИЙ РИСК') {
+    tagColor = 'orange';
+    tagText = 'СРЕДНИЙ РИСК';
+  }
 
   return (
     <>

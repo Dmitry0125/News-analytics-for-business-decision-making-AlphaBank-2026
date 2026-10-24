@@ -3,10 +3,20 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 
 const { Title, Text, Paragraph } = Typography;
 
-export default function NewsCard({ news, onClick }) {
-  const isRisk = true;
-  const tagColor = isRisk ? 'red' : 'green';
-  const tagText = isRisk ? 'ВЫСОКИЙ РИСК' : 'ВОЗМОЖНОСТЬ';
+export default function NewsCard({ news, onClick}) {
+  const risk = news.risk_level;
+  let tagColor = 'gray'
+  let tagText = 'ЗАГРУЗКА'
+  if (risk === 'High Risk' || risk === 'ВЫСОКИЙ РИСК') {
+    tagColor = 'red';
+    tagText = 'ВЫСОКИЙ РИСК';
+  } else if (risk === 'Opportunity' || risk === 'ВОЗМОЖНОСТЬ') {
+    tagColor = 'green';
+    tagText = 'ВОЗМОЖНОСТЬ';
+  } else if (risk === 'Medium Risk' || risk === 'СРЕДНИЙ РИСК') {
+    tagColor = 'orange';
+    tagText = 'СРЕДНИЙ РИСК';
+  }
 
   return (
     <Card 
@@ -31,7 +41,7 @@ export default function NewsCard({ news, onClick }) {
         {news.news_source.source_name || 'Коммерсантъ'}
       </Text>
       
-      <Paragraph ellipsis={{ rows: 2 }} style={{ margin: 0, color: '#555', marginBottom: '15px' }}>
+      <Paragraph ellipsis={{ rows: 2 }} style={{ margin: 0, color: '#555'}}>
         {news.ai_interpretation.what_happened}
       </Paragraph>
 
